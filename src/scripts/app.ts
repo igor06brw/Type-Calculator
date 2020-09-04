@@ -1,3 +1,6 @@
+import "../styles/main.scss"
+
+
 interface Calculator {
     currentTotal: number;
     currentOperator: string;
