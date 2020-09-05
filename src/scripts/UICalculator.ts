@@ -1,20 +1,21 @@
 class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
+    digit: number;
 
 
     constructor(app: HTMLElement) {
         this.app = app;
     }
-    generateDigitButton() {
+    generateDigitButton(value: number) {
             this.button = document.createElement('button');
             this.button.type = 'button';
-            this.button.textContent = "button";
+            this.button.textContent = String(value);
             this.app.appendChild(this.button);
     }
     displayButtons() {
         for(let i = 0; i <= 9; i++) {
-            this.generateDigitButton();
+            this.generateDigitButton(i);
         }
     }
 }
