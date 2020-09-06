@@ -1,6 +1,7 @@
 class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
+    output: HTMLOutputElement;
 
 
     constructor(app: HTMLElement) {
@@ -15,6 +16,15 @@ class UICalculator {
         this.button.className = HTMLClass;
         this.app.appendChild(this.button);
     }
+    generateOutput() {
+        this.output = document.createElement('output');
+        this.output.name = 'Display Result'
+        this.output.textContent = "1342 + 5943";
+        this.output.id = 'outputResult';
+        this.output.className = "output";
+        this.app.appendChild(this.output);
+    }
+
     displayButtons() {
         for(let i = 0; i <= 9; i++) {
             this.generateButton(String(i), 'button' + i, String(i), 'button digit');
@@ -35,4 +45,5 @@ window.onload = () => {
     const app: HTMLElement = document.getElementById('app');
     const calc = new UICalculator(app);
     calc.displayButtons();
+    calc.generateOutput();
 }
