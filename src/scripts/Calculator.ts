@@ -3,8 +3,6 @@ export class Calculator {
     nextValue: number;
 
     displaySomething(nextValue) {
-
         console.log(nextValue)
-        
     }
 }
