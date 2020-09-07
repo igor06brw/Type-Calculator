@@ -1,6 +1,5 @@
 import { UICalculator } from "./UICalculator";
 import { Calculator } from "./Calculator";
-
 const app: HTMLElement = document.getElementById('app');
 const UICalc = new UICalculator(app);
 const calculator = new Calculator();

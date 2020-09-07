@@ -6,24 +6,44 @@ export class Calculator {
     calculate(currentValue: any) {
         switch(currentValue) {
             case '+': {
-                console.log(this.prevValue);
                 this.addition(this.prevValue);
-                console.log('add!')
                 break;
-            }
+            };
+            case '-': {
+                this.substraction(this.prevValue);
+                break;
+            };
+            case '*': {
+                this.multiply(this.prevValue);
+                break;
+            };
+            case '/': {
+                this.divide(this.prevValue);
+                break;
+            };
             default: {
                 this.savePrevValue(currentValue);
                 break;
-            }
+            };
         }
     }
     addition(currentValue: number) {
-        this.totalCurrent = this.totalCurrent + currentValue;
+        this.totalCurrent += currentValue;
+        console.log(this.totalCurrent);
+    }
+    substraction(currentValue: number) {
+        this.totalCurrent -= currentValue;
+        console.log(this.totalCurrent);
+    }
+    multiply(currentValue: number) {
+        this.totalCurrent *= currentValue;
+        console.log(this.totalCurrent);
+    }
+    divide(currentValue: number) {
+        this.totalCurrent /= currentValue;
         console.log(this.totalCurrent);
     }
     savePrevValue(currentValue: any) {
         this.prevValue = Number(currentValue);
-        console.log(this.prevValue);
     }
-    
 }
