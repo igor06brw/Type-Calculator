@@ -27,6 +27,11 @@ module.exports = {
     stats: {
       colors: true
     },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9000
+    },
     output: {
       path: path.resolve("dist"),
       filename: "test-from-typescript.js",
