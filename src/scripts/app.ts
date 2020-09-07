@@ -11,6 +11,6 @@ window.onload = () => {
 }
 
 app.addEventListener('click', (event) => {
-    calculator.displaySomething((<HTMLButtonElement>event.target).name);
+    calculator.calculate((<HTMLButtonElement>event.target).name);
 })
 
