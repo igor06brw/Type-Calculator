@@ -1,27 +1,42 @@
-class UICalculator {
+export class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
-    digit: number;
+    output: HTMLOutputElement;
 
 
     constructor(app: HTMLElement) {
         this.app = app;
     }
-    generateDigitButton(value: number) {
-            this.button = document.createElement('button');
-            this.button.type = 'button';
-            this.button.textContent = String(value);
-            this.app.appendChild(this.button);
+    generateButton(value: string, id: string, name: string, HTMLClass: string) {
+        this.button = document.createElement('button');
+        this.button.type = 'button';
+        this.button.textContent = value;
+        this.button.id = id;
+        this.button.name = name; 
+        this.button.className = HTMLClass;
+        this.app.appendChild(this.button);
     }
+    generateOutput() {
+        this.output = document.createElement('output');
+        this.output.name = 'Display Result'
+        this.output.textContent = "1342 + 5943";
+        this.output.id = 'outputResult';
+        this.output.className = "output";
+        this.app.appendChild(this.output);
+    }
+
     displayButtons() {
         for(let i = 0; i <= 9; i++) {
-            this.generateDigitButton(i);
+            this.generateButton(String(i), 'button' + i, String(i), 'button digit');
         }
-    }
-}
+        this.generateButton('-', 'substraction', 'minus', 'button operator');
+        this.generateButton('+', 'addition', 'plus', 'button operator');
+        this.generateButton('*', 'multiply', 'multiple', 'button operator');
+        this.generateButton('/', 'divide' , 'divide', 'button operator');
 
-window.onload = () => {
-    const app: HTMLElement = document.getElementById('app');
-    const calc = new UICalculator(app);
-    calc.displayButtons();
+        this.generateButton('=', 'equal', 'result', 'button action');
+        this.generateButton('AC', 'clean', 'reset', 'button action');
+        
+        this.generateButton('.', 'decimal', 'decimal', 'button decimal');
+    }
 }
