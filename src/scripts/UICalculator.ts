@@ -29,14 +29,14 @@ export class UICalculator {
         for(let i = 0; i <= 9; i++) {
             this.generateButton(String(i), 'button' + i, String(i), 'button digit');
         }
-        this.generateButton('-', 'substraction', 'minus', 'button operator');
-        this.generateButton('+', 'addition', 'plus', 'button operator');
-        this.generateButton('*', 'multiply', 'multiple', 'button operator');
-        this.generateButton('/', 'divide' , 'divide', 'button operator');
+        this.generateButton('-', 'substraction', '-', 'button operator');
+        this.generateButton('+', 'addition', '+', 'button operator');
+        this.generateButton('*', 'multiply', '*', 'button operator');
+        this.generateButton('/', 'divide' , '/', 'button operator');
 
-        this.generateButton('=', 'equal', 'result', 'button action');
-        this.generateButton('AC', 'clean', 'reset', 'button action');
+        this.generateButton('=', 'equal', '=', 'button action');
+        this.generateButton('AC', 'clean', ' ', 'button action');
         
-        this.generateButton('.', 'decimal', 'decimal', 'button decimal');
+        this.generateButton('.', 'decimal', '.', 'button decimal');
     }
 }
