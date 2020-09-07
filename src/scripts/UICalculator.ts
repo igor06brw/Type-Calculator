@@ -1,4 +1,4 @@
-class UICalculator {
+export class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
     output: HTMLOutputElement;
@@ -39,11 +39,4 @@ class UICalculator {
         
         this.generateButton('.', 'decimal', 'decimal', 'button decimal');
     }
-}
-
-window.onload = () => {
-    const app: HTMLElement = document.getElementById('app');
-    const calc = new UICalculator(app);
-    calc.displayButtons();
-    calc.generateOutput();
 }
