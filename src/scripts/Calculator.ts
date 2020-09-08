@@ -11,12 +11,20 @@ export class Calculator {
             console.log(this.operator);
         } else {
             if(this.firstNumber !== undefined ) {
-                this.secondNumber = Number(param);
-                console.log(this.secondNumber, "secondNumber");
+                this.secondNumber = this.firstNumber;
+                this.firstNumber = Number(param);
+            } else if(this.firstNumber === undefined) {
+                this.firstNumber = Number(param);
             }
-            this.firstNumber = Number(param);
-            console.log(this.firstNumber, "firstNumber");
         }
+        console.log(this.firstNumber, this.operator, this.secondNumber);
+
+
+        if(this.firstNumber && this.operator && this.secondNumber !== undefined){
+            console.log('calculate');
+            this.doCalculate(this.firstNumber, this.operator, this.secondNumber);     
+            console.log('')         
+        } 
     }
     doCalculate(firstNumber: number, operator: string, secondNumber: number) {
         switch(operator) {
@@ -43,8 +51,8 @@ export class Calculator {
         }
     }
     addition(firstNumber, secondNumber) {
-        this.totalCurrent = firstNumber + secondNumber;
-        console.log(this.totalCurrent);
+        this.firstNumber = firstNumber + secondNumber;
+        console.log(this.firstNumber);
     }
     substraction(currentValue: number) {
         this.totalCurrent -= currentValue;
