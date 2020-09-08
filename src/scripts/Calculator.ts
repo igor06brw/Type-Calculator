@@ -1,49 +1,83 @@
 export class Calculator {
-    prevValue: number;
-    totalCurrent: number = 0;
+    firstNumber: number;
+    operator: string;
+    secondNumber: number;
+    totalCurrent: number;
 
-
-    calculate(currentValue: any) {
-        switch(currentValue) {
-            case '+': {
-                this.addition(this.prevValue);
+    
+    checkIsNaN(param: any) {
+        if(isNaN(Number(param))) {
+            this.operator = String(param);
+            console.log(this.operator);
+        } else {
+            if(this.firstNumber !== undefined ) {
+                this.secondNumber = this.firstNumber;
+                this.firstNumber = Number(param);
+            } else if(this.firstNumber === undefined) {
+                this.firstNumber = Number(param);
+            }
+        }
+        if(this.firstNumber && this.operator && this.secondNumber !== undefined){
+            console.log('calculate');
+            this.doCalculate(this.firstNumber, this.operator, this.secondNumber);             
+        } 
+        if(this.operator == 'clear') {
+            this.cleanAllMemory();
+        }
+        console.log(this.firstNumber, this.operator, this.secondNumber);
+    }
+    doCalculate(firstNumber: number, operator: string, secondNumber: number) {
+        switch(operator) {
+            case 'add': {
+                this.addition(firstNumber, secondNumber);
                 break;
             };
-            case '-': {
-                this.substraction(this.prevValue);
+            case 'substrace': {
+                this.substraction(firstNumber, secondNumber);
                 break;
             };
-            case '*': {
-                this.multiply(this.prevValue);
+            case 'multiple': {
+                this.multiply(firstNumber, secondNumber);
                 break;
             };
-            case '/': {
-                this.divide(this.prevValue);
+            case 'divide': {
+                this.divide(firstNumber, secondNumber);
                 break;
             };
             default: {
-                this.savePrevValue(currentValue);
+                console.log('LEL XD')
                 break;
             };
         }
     }
-    addition(currentValue: number) {
-        this.totalCurrent += currentValue;
-        console.log(this.totalCurrent);
+
+    cleanAllMemory() {
+        this.secondNumber = undefined;
+        this.operator = undefined;
+        this.firstNumber = undefined;
     }
-    substraction(currentValue: number) {
-        this.totalCurrent -= currentValue;
-        console.log(this.totalCurrent);
+    cleanMemory() {
+        this.operator = undefined;
+        this.firstNumber = undefined
     }
-    multiply(currentValue: number) {
-        this.totalCurrent *= currentValue;
-        console.log(this.totalCurrent);
+    addition(firstNumber, secondNumber) {
+        this.secondNumber = firstNumber + secondNumber;
+        this.cleanMemory()
+        console.log(this.secondNumber);
     }
-    divide(currentValue: number) {
-        this.totalCurrent /= currentValue;
-        console.log(this.totalCurrent);
+    substraction(firstNumber: number, secondNumber: number) {
+        this.secondNumber = firstNumber - secondNumber;
+        this.cleanMemory()
+        console.log(this.secondNumber);
     }
-    savePrevValue(currentValue: any) {
-        this.prevValue = Number(currentValue);
+    multiply(firstNumber: number, secondNumber: number) {
+        this.secondNumber = firstNumber * secondNumber;
+        this.cleanMemory()
+        console.log(this.secondNumber);
+    }
+    divide(firstNumber: number, secondNumber: number) {
+        this.secondNumber = secondNumber / firstNumber;
+        this.cleanMemory()
+        console.log(this.secondNumber);
     }
 }
