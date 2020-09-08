@@ -50,28 +50,29 @@ export class Calculator {
             };
         }
     }
+
+    cleanMemory() {
+        this.operator = undefined;
+        this.firstNumber = undefined
+    }
     addition(firstNumber, secondNumber) {
         this.secondNumber = firstNumber + secondNumber;
-        this.operator = undefined;
-        this.firstNumber = undefined;
+        this.cleanMemory()
         console.log(this.secondNumber);
     }
     substraction(firstNumber: number, secondNumber: number) {
         this.secondNumber = firstNumber - secondNumber;
-        this.operator = undefined;
-        this.firstNumber = undefined;
+        this.cleanMemory()
         console.log(this.secondNumber);
     }
     multiply(firstNumber: number, secondNumber: number) {
         this.secondNumber = firstNumber * secondNumber;
-        this.operator = undefined;
-        this.firstNumber = undefined;
+        this.cleanMemory()
         console.log(this.secondNumber);
     }
     divide(firstNumber: number, secondNumber: number) {
         this.secondNumber = secondNumber / firstNumber;
-        this.operator = undefined;
-        this.firstNumber = undefined;
+        this.cleanMemory()
         console.log(this.secondNumber);
     }
 }
