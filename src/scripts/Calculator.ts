@@ -51,8 +51,10 @@ export class Calculator {
         }
     }
     addition(firstNumber, secondNumber) {
-        this.firstNumber = firstNumber + secondNumber;
-        console.log(this.firstNumber);
+        this.secondNumber = firstNumber + secondNumber;
+        this.operator = undefined;
+        this.firstNumber = undefined;
+        console.log(this.secondNumber);
     }
     substraction(currentValue: number) {
         this.totalCurrent -= currentValue;
