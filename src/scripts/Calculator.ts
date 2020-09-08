@@ -28,26 +28,26 @@ export class Calculator {
     }
     doCalculate(firstNumber: number, operator: string, secondNumber: number) {
         switch(operator) {
-            case '+': {
+            case 'add': {
                 this.addition(firstNumber, secondNumber);
                 break;
             };
-            // case '-': {
-            //     this.substraction(this.prevValue);
-            //     break;
-            // };
-            // case '*': {
-            //     this.multiply(this.prevValue);
-            //     break;
-            // };
-            // case '/': {
-            //     this.divide(this.prevValue);
-            //     break;
-            // };
-            // default: {
-            //     console.log('LEL XD')
-            //     break;
-            // };
+            case 'substrace': {
+                this.substraction(firstNumber, secondNumber);
+                break;
+            };
+            case 'multiple': {
+                this.multiply(firstNumber, secondNumber);
+                break;
+            };
+            case 'divide': {
+                this.divide(firstNumber, secondNumber);
+                break;
+            };
+            default: {
+                console.log('LEL XD')
+                break;
+            };
         }
     }
     addition(firstNumber, secondNumber) {
@@ -56,16 +56,22 @@ export class Calculator {
         this.firstNumber = undefined;
         console.log(this.secondNumber);
     }
-    substraction(currentValue: number) {
-        this.totalCurrent -= currentValue;
-        console.log(this.totalCurrent);
+    substraction(firstNumber: number, secondNumber: number) {
+        this.secondNumber = firstNumber - secondNumber;
+        this.operator = undefined;
+        this.firstNumber = undefined;
+        console.log(this.secondNumber);
     }
-    multiply(currentValue: number) {
-        this.totalCurrent *= currentValue;
-        console.log(this.totalCurrent);
+    multiply(firstNumber: number, secondNumber: number) {
+        this.secondNumber = firstNumber * secondNumber;
+        this.operator = undefined;
+        this.firstNumber = undefined;
+        console.log(this.secondNumber);
     }
-    divide(currentValue: number) {
-        this.totalCurrent /= currentValue;
-        console.log(this.totalCurrent);
+    divide(firstNumber: number, secondNumber: number) {
+        this.secondNumber = secondNumber / firstNumber;
+        this.operator = undefined;
+        this.firstNumber = undefined;
+        console.log(this.secondNumber);
     }
 }
