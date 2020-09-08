@@ -17,14 +17,14 @@ export class Calculator {
                 this.firstNumber = Number(param);
             }
         }
-        console.log(this.firstNumber, this.operator, this.secondNumber);
-
-
         if(this.firstNumber && this.operator && this.secondNumber !== undefined){
             console.log('calculate');
-            this.doCalculate(this.firstNumber, this.operator, this.secondNumber);     
-            console.log('')         
+            this.doCalculate(this.firstNumber, this.operator, this.secondNumber);             
         } 
+        if(this.operator == 'clear') {
+            this.cleanAllMemory();
+        }
+        console.log(this.firstNumber, this.operator, this.secondNumber);
     }
     doCalculate(firstNumber: number, operator: string, secondNumber: number) {
         switch(operator) {
@@ -51,6 +51,11 @@ export class Calculator {
         }
     }
 
+    cleanAllMemory() {
+        this.secondNumber = undefined;
+        this.operator = undefined;
+        this.firstNumber = undefined;
+    }
     cleanMemory() {
         this.operator = undefined;
         this.firstNumber = undefined
