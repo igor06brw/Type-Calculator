@@ -34,7 +34,7 @@ export class UICalculator {
         this.generateButton('*', 'multiply', 'multiple', 'button operator');
         this.generateButton('/', 'divide' , 'divide', 'button operator');
 
-        this.generateButton('=', 'equal', '=', 'button action');
+        this.generateButton('=', 'equal', 'equal', 'button action');
         this.generateButton('AC', 'clean', 'clear', 'button action');
         
         this.generateButton('.', 'decimal', '.', 'button decimal');
