@@ -1,17 +1,25 @@
 export class Calculator {
     firstNumber: number;
     operator: string;
+    decimal: boolean = false;
     secondNumber: number;
     totalCurrent: string = '';
     prevOperator: string = '';
 
     
     checkIsNaN(param: any) {
+        console.log(param);
+        if(param == 'decimal' && this.decimal == false) {
+            console.log('param == \'decimal\' && this.decimal == false')
+            this.decimal = true;
+            return this.totalCurrent += '.';
+        }
         if(isNaN(Number(param))) {
             this.operator = String(param);
+            this.decimal = false;
             return this.assignDigits(param)
         } else {
-                this.assignDigits(param)
+            return this.assignDigits(param);
         }
         if(this.operator == 'clear') {
             this.cleanAllMemory();
