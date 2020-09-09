@@ -13,17 +13,10 @@ export class Calculator {
         } else {
             if(this.firstNumber !== undefined ) {
                 this.assignDigits(param)
-                // this.secondNumber = this.firstNumber;
-                // this.firstNumber = Number(param);
             } else if(this.firstNumber === undefined) {
                 this.assignDigits(param)
-                // this.firstNumber = Number(param);
             }
         }
-        // if(this.firstNumber && this.operator && this.secondNumber !== undefined){
-        //     console.log('calculate');
-        //     this.doCalculate(this.firstNumber, this.operator, this.secondNumber);             
-        // } 
         if(this.operator == 'clear') {
             this.cleanAllMemory();
         }
@@ -60,34 +53,6 @@ export class Calculator {
     
 
     assignDigits(value: any) {
-        // if(this.firstNumber === undefined && this.operator === undefined) {
-        //     this.totalCurrent += value;
-        // }
-        // if(this.operator !== undefined && this.firstNumber !== undefined) {
-        //     this.totalCurrent += value;
-        //     console.log(this.operator == this.prevOperator);
-        //     console.log(this.operator, this.prevOperator);
-            
-        //     if(this.operator !== undefined && this.secondNumber !== undefined ) {
-        //         this.firstNumber = Number(this.totalCurrent);
-        //         this.totalCurrent = '';
-        //         this.doCalculate(this.firstNumber, this.operator, this.secondNumber);
-        //         console.log('calculate'); 
-        //     }  
-        //     if(this.operator !== undefined && this.secondNumber === undefined) {
-        //         this.secondNumber = this.firstNumber;
-        //         this.firstNumber = Number(this.totalCurrent);
-        //         this.totalCurrent = '';
-        //         console.log('calculate');
-        //         this.doCalculate(this.firstNumber, this.operator, this.secondNumber);  
-        //     }  
-        // }
-        // if(this.firstNumber === undefined && this.operator !== undefined ) {
-        //     this.prevOperator = this.operator
-        //     this.firstNumber = Number(this.totalCurrent);
-        //     this.totalCurrent = '';
-        //     console.log(this.firstNumber);
-        // }
         if(this.firstNumber === undefined) {
             if(this.operator !== undefined && this.secondNumber === undefined) {
                 console.log('this.operator !== undefined && this.secondNumber === undefined');
