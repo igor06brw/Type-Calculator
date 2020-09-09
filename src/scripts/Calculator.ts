@@ -11,11 +11,7 @@ export class Calculator {
             this.operator = String(param);
             return this.assignDigits(param)
         } else {
-            if(this.firstNumber !== undefined ) {
                 this.assignDigits(param)
-            } else if(this.firstNumber === undefined) {
-                this.assignDigits(param)
-            }
         }
         if(this.operator == 'clear') {
             this.cleanAllMemory();
