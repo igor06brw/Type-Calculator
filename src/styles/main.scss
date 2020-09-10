@@ -1,11 +1,47 @@
-body {
-<<<<<<< HEAD
-    color: blue;
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.main-template {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(6, 60px);
+    width: 100vw;
+}
+button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .button {
-    width: 38px;
-    height: 38px;
-=======
-    background: blue;
->>>>>>> 42fcd815ba6a01686e8c71645757d689f834e2cf
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #777; 
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+
+    &:nth-of-type(8) {
+        grid-column: 4 / 4;
+    }
+}
+.output {
+    grid-column: 1 / 5;
+    border: none;
+    color: #fff;
+    background-color: black;
+    text-align: center;
+    font-size: 24px;
+    line-height: 2.5em;
 }
