@@ -7,8 +7,6 @@ const calculator = new Calculator();
 
 window.onload = () => {
     UICalc.displayApp();
-    // UICalc.displayButtons();
-    // UICalc.generateOutput();
 
     app.addEventListener('click', (event) => {
         calculator.checkIsNaN((<HTMLButtonElement>event.target).name);
