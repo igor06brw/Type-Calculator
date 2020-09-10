@@ -1,11 +1,18 @@
 export class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
+    template: HTMLDivElement;
     output: HTMLOutputElement;
 
 
     constructor(app: HTMLElement) {
         this.app = app;
+    }
+    generateTemplate() {
+        this.template = document.createElement('div');
+        this.template.className = 'main-template';
+        this.app.appendChild(this.template);
+        
     }
     generateButton(value: string, id: string, name: string, HTMLClass: string) {
         this.button = document.createElement('button');
@@ -14,7 +21,7 @@ export class UICalculator {
         this.button.id = id;
         this.button.name = name; 
         this.button.className = HTMLClass;
-        this.app.appendChild(this.button);
+        this.template.appendChild(this.button);
     }
     generateOutput() {
         this.output = document.createElement('output');
@@ -22,7 +29,7 @@ export class UICalculator {
         this.output.textContent = "1342 + 5943";
         this.output.id = 'outputResult';
         this.output.className = "output";
-        this.app.appendChild(this.output);
+        this.template.appendChild(this.output);
     }
 
     displayButtons() {
@@ -37,6 +44,15 @@ export class UICalculator {
         this.generateButton('=', 'equal', 'equal', 'button action');
         this.generateButton('AC', 'clean', 'clear', 'button action');
         
-        this.generateButton('.', 'decimal', '.', 'button decimal');
+        this.generateButton('.', 'decimal', 'decimal', 'button decimal');
+    }
+    displayOutput() {
+        this.generateOutput();
+    }
+    displayApp() {
+        this.generateTemplate();
+        this.generateOutput();
+        this.displayButtons();
+        
     }
 }
