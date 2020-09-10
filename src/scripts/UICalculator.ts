@@ -33,10 +33,10 @@ export class UICalculator {
     }
 
     displayButtons() {
-        this.generateButton('AC', 'clean', 'clear', 'button button--action button--crear');
+        this.generateButton('AC', 'clean', 'clear', 'button button--action button--clear');
         this.generateButton(' ', ' ', ' ', 'button blank');
         this.generateButton(' ', ' ', ' ', 'button blank');
-        this.generateButton('/', 'divide' , 'divide', 'button butto--operator button--divide');
+        this.generateButton('/', 'divide' , 'divide', 'button button--operator button--divide');
 
         this.generateButton('7', 'button7', '7', 'button button--7');
         this.generateButton('8', 'button8', '8', 'button button--8');

@@ -40,7 +40,6 @@ button {
     margin: 0;
     width: 80px;
     height: 80px;
-    border: 1px solid #777; 
     text-align: center;
     font-size: 24px;
     font-weight: 300;
@@ -48,6 +47,22 @@ button {
     &--0 {
         width: 160px;
         grid-column: 1 / 3;
+        // border-top: 1px solid #000000;
+        // border-right: 1px solid #000000;
+        // border-bottom: 1px none #000000;
+        // border-left: 1px none #000000;
+    }
+
+    &--operator {
+        background-color: rgb(245, 255, 109);
+    }
+    &--equal {
+        background-color: rgb(245, 255, 109);
+    }
+    &--clear {
+        background-color: rgb(36, 36, 36);
+        color: #fff;
+
     }
 
     &:active {
