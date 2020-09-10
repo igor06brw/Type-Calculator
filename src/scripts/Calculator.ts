@@ -14,6 +14,10 @@ export class Calculator {
             this.decimal = true;
             return this.totalCurrent += '.';
         }
+        if(param == 'equal' && this.operator === undefined) {
+            console.log('equal pressed');
+            return 0;
+        }
         if(isNaN(Number(param))) {
             this.operator = String(param);
             this.decimal = false;
@@ -70,8 +74,7 @@ export class Calculator {
                     console.log('this.prevOperator != this.operator');
                     this.firstNumber = Number(this.totalCurrent);
                     this.totalCurrent = '';
-                    this.doCalculate(this.firstNumber, this.prevOperator, this.secondNumber);
-                    return;
+                    return this.doCalculate(this.firstNumber, this.prevOperator, this.secondNumber);
                 }
                 return this.totalCurrent += value;
             }
@@ -107,8 +110,12 @@ export class Calculator {
         console.log(this.secondNumber);
     }
     divide(firstNumber: number, secondNumber: number) {
-        this.secondNumber = secondNumber / firstNumber;
-        this.cleanMemory()
-        console.log(this.secondNumber);
+        if(firstNumber != 0) {
+          this.secondNumber = secondNumber / firstNumber; 
+          this.cleanMemory()
+          console.log(this.secondNumber);
+        } else {
+            return secondNumber = 0;
+        }
     }
 }
