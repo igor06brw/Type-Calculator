@@ -7,6 +7,9 @@ export class Calculator {
     prevOperator: string = '';
 
     
+    
+
+    
     checkIsNaN(param: any) {
         console.log(param);
         if(param == 'decimal' && this.decimal == false) {

@@ -1,3 +1,5 @@
+
+
 export class UICalculator {
     app: HTMLElement;
     button: HTMLButtonElement;
@@ -23,10 +25,10 @@ export class UICalculator {
         this.button.className = HTMLClass;
         this.template.appendChild(this.button);
     }
-    generateOutput() {
+    generateOutput(value: string) {
         this.output = document.createElement('output');
         this.output.name = 'Display Result'
-        this.output.textContent = "1342 + 5943";
+        this.output.textContent = value;
         this.output.id = 'outputResult';
         this.output.className = "output";
         this.template.appendChild(this.output);
@@ -41,7 +43,7 @@ export class UICalculator {
         this.generateButton('7', 'button7', '7', 'button button--7');
         this.generateButton('8', 'button8', '8', 'button button--8');
         this.generateButton('9', 'button9', '9', 'button button--9');
-        this.generateButton('*', 'multiply', 'multiple', 'button button--operator button--multiple');
+        this.generateButton('x', 'multiply', 'multiple', 'button button--operator button--multiple');
 
         this.generateButton('4', 'button4', '4', 'button button--4');
         this.generateButton('5', 'button5', '5', 'button button--5');
@@ -60,12 +62,11 @@ export class UICalculator {
         
     }
     displayOutput() {
-        this.generateOutput();
+        this.generateOutput('');
     }
     displayApp() {
         this.generateTemplate();
-        this.generateOutput();
+        this.displayOutput();
         this.displayButtons();
-        
     }
 }
